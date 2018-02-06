@@ -1,0 +1,59 @@
+FUNDAMENTAL:
+string (char)
+boolean
+int (numbers ie. float)
+list
+set (unordered, all elements are unique, items are hashed)
+
+
+dictionary (key(unique) and value)
+
+IMPORTANT
+range
+tuple
+
+for, len, in, sum
+
+print a list
+\n = new line
+print("\n", join(myList))
+
+slice: [startPos: endPosPlusOne: step]
+default [0, length, 1]
+
+[-3:] last 3 in str
+[-1:] last 1 char
+[-5:-2] start at 5th last char and ends 2nd last
+[::-1] reverses list
+print(sys.argv[1][::2])
+
+3a: print(sum([int(num) for num in sys.argv[1:]]))
+
+[int(num) for num in sys.argv[1:]] is called list comprehension
+
+graphs can have cycles; trees cannot
+
+trees: seen(root + children), frontier (children under), unseen (children under prev)
+
+parseMe = [root]
+listAlreadSeen = {root: ""}
+while not done(check parseMe): 
+	get vertex from parseMe (.pop(0))
+	add the unseen children of it to paresMe and listAlreadySeen
+	if we are at the goal return solution
+return []
+
+
+return sum([1 for i in range(len(myStr)-1) for g in range(i+1, lenn(myStr)) if myStr[i]>myStr[g]])
+
+x&1 bitmapping returns last bitmapping
+
+
+def bruteForce(pzl):
+	if pzlInvalid(pzl): return "" (sign of failure)
+	if solved(pzl): return pzl
+	identify a position to be filled in for each possibility at this position
+		construct a subPzl by by putting that possibility into pzl
+		bF = bruteforce(subPzl)
+		if bF: return bF
+	return ""
